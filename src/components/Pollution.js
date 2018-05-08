@@ -5,8 +5,8 @@ class Pollution extends React.Component {
         return(
           <div>
               {this.props.status}
-                {this.props.cities_data && <form onSubmit={this.props.handleSubmit}>
-                <select value={this.props.selected_city} onChange={this.props.handleChange}>{this.props.cities_data.map(city => {
+                {this.props.cities_data && <form onSubmit={this.props.getCityStation}>
+                <select value={this.props.selected_city} onChange={this.props.getCity}>{this.props.cities_data.map(city => {
                    return  (<option key={city.uid} value={city.uid}> 
                                 {city.station.name}
                             </option>)
