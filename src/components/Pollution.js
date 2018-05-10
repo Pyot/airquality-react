@@ -1,11 +1,21 @@
 import React from "react";
 
 class Pollution extends React.Component {
+   
     render() {
+
+
+        if (this.props.status === 'ok') {
+            this.name = 'AlabamaTest';
+            this.status = this.props.status;
+            
+        }
         return(
           <div>
-              {this.props.status}
-                {this.props.cities_data && <form onSubmit={this.props.getCityStation}>
+              {this.name}
+              <br/>
+              {this.status}
+                {this.props.cities_data && <form onChange={this.props.getCity}>
                 <select value={this.props.selected_city} onChange={this.props.getCity}>{this.props.cities_data.map(city => {
                    return  (<option key={city.uid} value={city.uid}> 
                                 {city.station.name}
