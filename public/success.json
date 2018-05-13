@@ -1,0 +1,57 @@
+{
+    "status": "ok",
+    "data": {
+    "aqi": 71,
+    "idx": 3391,
+    "attributions": [
+    {
+    "url": "http://sojp.wios.warszawa.pl/",
+    "name": "Regional Inspectorate for Environmental Protection in Warsaw (Wojewódzki Inspektorat Ochrony Środowiska w Warszawie)"
+    },
+    {
+    "url": "http://powietrze.gios.gov.pl/",
+    "name": "Główny inspektorat ochrony środowiska"
+    }
+    ],
+    "city": {
+    "geo": [
+    52.290915,
+    21.042459
+    ],
+    "name": "Targówek, Warszawa, Mazowieckie",
+    "url": "http://aqicn.org/city/poland/mazowieckie/warszawa/targowek/"
+    },
+    "dominentpol": "pm25",
+    "iaqi": {
+    "co": {
+    "v": 500
+    },
+    "h": {
+    "v": 70.1
+    },
+    "no2": {
+    "v": 200
+    },
+    "o3": {
+    "v": 14.6
+    },
+    "pm10": {
+    "v": 44
+    },
+    "pm25": {
+    "v": 1120
+    },
+    "so2": {
+    "v": 1000
+    },
+    "t": {
+    "v": 16.2
+    }
+    },
+    "time": {
+    "s": "2018-05-11 08:00:00",
+    "tz": "+02:00",
+    "v": 1526025600
+    }
+    }
+    }

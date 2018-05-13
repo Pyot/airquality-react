@@ -1,0 +1,95 @@
+{
+    "status": "ok",
+    "data": [{
+        "uid": "succeswws",
+        "aqi": "83",
+        "time": {
+            "tz": "+01:00",
+            "stime": "2018-05-11 09:00:00",
+            "vtime": 1526025600
+        },
+        "station": {
+            "name": "succescvxds",
+            "geo": [52.225171, 21.014783],
+            "url": "poland/mazowieckie/warszawa/marszalkowska"
+        }
+    }, {
+        "uid": "fail",
+        "aqi": "70",
+        "time": {
+            "tz": "+01:00",
+            "stime": "2018-05-11 12:00:00",
+            "vtime": 1526036400
+        },
+        "station": {
+            "name": "fail",
+            "geo": [52.219339, 21.0047],
+            "url": "poland/mazowieckie/warszawa/komunikacyjna"
+        }
+    }, {
+        "uid": "success",
+        "aqi": "56",
+        "time": {
+            "tz": "+01:00",
+            "stime": "2018-05-11 12:00:00",
+            "vtime": 1526036400
+        },
+        "station": {
+            "name": "success",
+            "geo": [52.160838, 21.033815],
+            "url": "poland/mazowieckie/warszawa/ursynow"
+        }
+    }, {
+        "uid": "html",
+        "aqi": "56",
+        "time": {
+            "tz": "+01:00",
+            "stime": "2018-05-11 12:00:00",
+            "vtime": 1526036400
+        },
+        "station": {
+            "name": "html",
+            "geo": [52.290915, 21.042459],
+            "url": "poland/mazowieckie/warszawa/targowek"
+        }
+    }, {
+        "uid": "empty",
+        "aqi": "",
+        "time": {
+            "tz": "",
+            "stime": "",
+            "vtime": 0
+        },
+        "station": {
+            "name": "empty",
+            "geo": [0, 0],
+            "url": ""
+        }
+    }, {
+        "uid": 3929,
+        "aqi": "",
+        "time": {
+            "tz": "",
+            "stime": "",
+            "vtime": 0
+        },
+        "station": {
+            "name": "Porajów, Warszawa, Mazowieckie, Poland",
+            "geo": [0, 0],
+            "url": ""
+        }
+    }, {
+        "uid": 3877,
+        "aqi": "",
+        "time": {
+            "tz": "",
+            "stime": "",
+            "vtime": 0
+        },
+        "station": {
+            "name": "Puszczy Solskiej, Warszawa, Mazowieckie, Poland",
+            "geo": [0, 0],
+            "url": ""
+        }
+    }]
+}
