@@ -1,44 +1,40 @@
 /* Change Autocomplete styles in Chrome*/
+
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus
-input:-webkit-autofill, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
-textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  
-  
   -webkit-box-shadow: 0 0 0px 1000px white inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
-
-#MainView{
-    min-height: 100vh;
-    background-color: #0288d1;  /* fallback for old browsers */
-
-
-    /* background: url('/background.jpg'); */
-
-    
-    color: white;
-    font-family: 'Rajdhani', sans-serif;
+#MainView {
+  min-height: 100vh;
+  background-color: #0288d1;
+  background-image: url('/background.jpg');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
 }
 
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
 ul {
-    columns: 2;
-    -webkit-columns: 2;
-    -moz-columns: 2;
-    padding: 0;
-    font-size: 1.3rem;
-  }
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  padding: 0;
+  font-size: 1.3rem;
+}
 
 .btn-pollution {
   background-color: #ff4081;
@@ -46,37 +42,142 @@ ul {
   color: white;
 }
 
-  #CityTitle {
-      padding: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
-    background-color: rgba(255, 255, 255, 0.4);
+#CityTitle {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.progress {
+  background-color: rgba(245, 245, 245, 0.1);
+  border-radius: 0px
+}
+
+.progress.legend {
+  margin-bottom: 0px;
+}
+
+.progress-bar {
+  font-size: 1.2rem;
+}
+
+.bar-green {
+  background: rgba(165, 214, 167, 1);
+}
+
+.bar-orange {
+  background: rgba(255, 183, 77, 1);
+}
+
+.bar-red {
+  background: rgba(229, 115, 115, 1);
+}
+
+.bar-green-info {
+  background: rgba(165, 214, 167, 0.5);
+}
+
+.bar-orange-info {
+  background: rgba(255, 183, 77, 0.5);
+}
+
+.bar-red-info {
+  background: rgba(229, 115, 115, 0.5);
+}
+
+.slide {
+  animation: slide 1s ease-in forwards;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
   }
-
-  .progress{
-    background-color: rgba(245, 245, 245, 0.1);
-    border-radius: 0px
+  100% {
+    transform: translateX(80px);
   }
+}
 
-  .progress.legend{
-    margin-bottom: 0px;
+.hide {
+  animation: hide 2s ease-in;
+  overflow: hidden;
+}
+
+@keyframes hide {
+  0% {
+    max-height: 300px;
+    overflow: hidden;
   }
-
-
-  .progress-bar{
-    font-size: 1.2rem;
+  100% {
+    max-height: 0px;
+    overflow: hidden;
   }
+}
 
+.fade-enter {
+  opacity: 0;
+  max-height: 0
+}
 
-.bar-green {background: rgba(165, 214, 167, 1);}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  max-height: 100px;
+  transition: all 1000ms ease-out;
+}
 
-.bar-orange {background: rgba(255, 183, 77, 1);}
+.fade-leave {
+  opacity: 1;
+  max-height: 500px;
+}
 
-.bar-red {background: rgba(229, 115, 115, 1);}
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  max-height: 0px;
+  transition: all 1000ms ease-out;
+}
 
+.fade-appear {
+  opacity: 0;
+  max-height: 0
+}
 
-.bar-green-info {background: rgba(165, 214, 167, 0.5);}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  max-height: 500px;
+  transition: all 1000ms ease-out;
+}
 
-.bar-orange-info {background: rgba(255, 183, 77, 0.5);}
+.slide-enter {
+  transform: translateX(-100%);
+}
 
-.bar-red-info {background: rgba(229, 115, 115, 0.5);}
+.slide-enter-active {
+  animation: slide-in 300ms easy-out forwards;
+}
+
+.slide-leave {
+  transform: translateX(0%);
+}
+
+.slide-leave-active {
+  animation: slide-out 300ms easy-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
