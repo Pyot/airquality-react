@@ -1,6 +1,6 @@
 import React from "react";
 
-class CityPollution extends React.Component {
+class ShowPollution extends React.Component {
     
     constructor (props) {
         super(props)
@@ -32,25 +32,29 @@ class CityPollution extends React.Component {
   
 
     render(){
-     
-      if(this.props.dataCityStatus){
-          this.dataCityStatus = this.props.dataCityStatus;
+        console.log("1111111111", this.props.stationName);
+      if(this.props.stationStatus){
+          this.stationStatus = this.props.stationStatus;
       }
-        if(this.props.dataCity){
-            this.dataCity =  this.props.dataCity;
-        } 
-        if(this.props.pollutionCity){          
-            this.pollutionCity = this.props.pollutionCity; 
+        if(this.props.stationName){
+            console.log("1111111AAAAAAA" ,this.props.stationName);
+            this.stationName =  this.props.stationName;
+        } else {
+            this.stationName = null;
+        }
+        console.log("22222222222" ,this.props.stationName);
+        if(this.props.stationPollution){          
+            this.stationPollution = this.props.stationPollution; 
         
-        } 
+        } else {
+            this.stationPollution = null;
+        }
 
         if(this.props.loadingTownList){
             return (
                 
                 <div>
                     
-            
-
                 </div>
             )
         } else if (this.props.loadingStation) {
@@ -62,19 +66,22 @@ class CityPollution extends React.Component {
                 </div>
             )
         } else {
+            console.log("333333333333" ,this.props.stationName);
             return (
-            <div id="CityPollution" className="row mt-4">
+                
+            <div id="ShowPollution" className="row mt-4">
                 <div className="col-md-12 d-flex justify-content-center">
-                    {/* {this.dataCityStatus && <h2>{this.dataCityStatus}</h2>} */}
+                    {this.stationStatus && <h2>{this.stationStatus}</h2>}
                 </div>
                 <div className="col-md-12 d-flex justify-content-center">
-                    {this.dataCity && this.dataCity.data && this.dataCity.data.city && <h2 id="CityTitle"><b>{this.dataCity.data.city.name}</b></h2>}
+                    {/* {this.dataCity && this.dataCity.data && this.dataCity.data.city && <h2 id="CityTitle"><b>{this.dataCity.data.city.name}</b></h2>} */}
+                    {this.stationName && <h2 id="CityTitle"><b>{this.stationName}</b></h2>}
+
                 </div>
                 <div className="col-md-12 d-flex justify-content-center">
-                {this.pollutionCity && <div className="col-md-10" >
-                        {Object.keys(this.pollutionCity).map((pollution, i) => {
-                            console.log(pollution);
-                            let pollutionValue = this.pollutionCity[pollution]['v'];
+                {this.stationPollution && <div className="col-md-10" >
+                        {Object.keys(this.stationPollution).map((pollution, i) => {
+                            let pollutionValue = this.stationPollution[pollution]['v'];
                             let info = this.info[pollution];
                             let colorBar;
                             let colorLegendBarGreen;
@@ -119,7 +126,7 @@ class CityPollution extends React.Component {
                                   </div>
                                     <div className="progress" style={{height: '30px'}}>
                                     
-                                    <div className={"progress-bar " + colorBar} role="progressbar" style={{width: widthBar+ '%'}}  aria-valuenow={this.pollutionCity[pollution]['v']} aria-valuemax="10">{this.pollutionCity[pollution]['v']}
+                                    <div className={"progress-bar " + colorBar} role="progressbar" style={{width: widthBar+ '%'}}  aria-valuenow={this.stationPollution[pollution]['v']} aria-valuemax="10">{this.stationPollution[pollution]['v']}
                                     </div>
                                   </div>
                                   </div>
@@ -139,4 +146,4 @@ class CityPollution extends React.Component {
     }
 }
 
-export default CityPollution;
+export default ShowPollution;

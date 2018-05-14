@@ -12,19 +12,19 @@ class Pollution extends React.Component {
                  <img src={"rings.svg"} alt="loading"/></div>
                 </div>
             )
-        } else  if (this.props.status) {
-           this.status = this.props.status;
+        } else  if (this.props.stationListStatus) {
+           this.stationListStatus = this.props.stationListStatus;
            return(
             <div className="row mt-3">
             <div className="col-md-12 d-flex justify-content-center"> 
               {this.name}
               <br/>
               
-                {this.props.cities_data && <form>
+                {this.props.stationList && <form>
                 <div className="form-group">
-                <select className="form-control" value={this.props.selected_city} onChange={this.props.getStationPollution}>
+                <select className="form-control" value={this.props.selectedStation} onChange={this.props.getStationPollution}>
                 <option key="start" > Wybierz stacje </option>
-                {this.props.cities_data.map(city => {
+                {this.props.stationList.map(city => {
                    return  (<option key={city.uid} value={city.uid}> 
                                 {city.station.name}
                             </option>)
@@ -36,18 +36,18 @@ class Pollution extends React.Component {
           </div> 
         );
         } else {
-            this.status = this.props.status;
+            this.stationListStatus = this.props.stationListStatus;
             return(
              <div className="row mt-3">
              <div className="col-md-12 d-flex justify-content-center"> 
                {this.name}
                <br/>
                
-                 {this.props.cities_data && <form>
+                 {this.props.stationList && <form>
                  <div className="form-group">
-                 <select className="form-control" value={this.props.selected_city} onChange={this.props.getStationPollution}>
+                 <select className="form-control" value={this.props.selectedStation} onChange={this.props.getStationPollution}>
                  <option key="start" > Wybierz stacje </option>
-                 {this.props.cities_data.map(city => {
+                 {this.props.stationList.map(city => {
                     return  (<option key={city.uid} value={city.uid}> 
                                  {city.station.name}
                              </option>)
