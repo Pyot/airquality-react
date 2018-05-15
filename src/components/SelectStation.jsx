@@ -33,7 +33,7 @@ class SelectStation extends React.Component {
               <div className="col-md-12 d-flex justify-content-center">
               {this.stationListStatus && <h2>{this.stationListStatus}</h2>}
                 <br/> {this.props.stationList && <form>
-                  <div className="form-group">
+                  <div className="form-group mt-2 mr-2 mb-0">
                     <select
                       className="form-control"
                       value={this.props.selectedStation}
@@ -53,16 +53,15 @@ class SelectStation extends React.Component {
                         })
 }</select>
                   </div>
+                  
                 </form>}
               </div>
-
             </div>
           </ReactCSSTransitionGroup>
         </div>
-
       );
     } else {
-   
+      this.refreshStationPollution = this.props.refreshStationPollution;
       return (
         <div>
          <ReactCSSTransitionGroup
@@ -73,12 +72,10 @@ class SelectStation extends React.Component {
             transitionEnterTimeout={1000}
             transitionLeaveTimeout={1000}
             transitionAppearTimeout={1000}>
-
           <div className="row mt-3">
             <div className="col-md-12 d-flex justify-content-center">
-           
-              <br/> {this.props.stationList && <form>
-                <div className="form-group">
+              <br/> {this.props.stationList && <form className="form-inline">
+                <div className="form-group mt-2 mr-2 mb-0">
                   <select
                     className="form-control"
                     value={this.props.selectedStation}
@@ -98,15 +95,14 @@ class SelectStation extends React.Component {
                       })
 }</select>
                 </div>
+                <button onClick={this.refreshStationPollution} type="button" className="btn btn-primary float-right mt-2">Odśwież</button>
               </form>}
             </div>
           </div>
           </ReactCSSTransitionGroup>
         </div>
-
       );
     }
-
   }
 }
 

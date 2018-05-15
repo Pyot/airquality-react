@@ -36,6 +36,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.getStationPollution = this.getStationPollution.bind(this);
+    this.refreshStationPollution = this.refreshStationPollution.bind(this);
     // this.getStations = this.getStations.bind(this);
     
   }
@@ -93,9 +94,9 @@ class App extends React.Component {
     selectedStation: e.target.value,
     })
    
-    const city = e.target.value;
+    const station = e.target.value;
     
-    fetch(`https://api.waqi.info/feed/@${city}/?token=7c200db3b52810d3f6a68b989445e0289d3428b8`)
+    fetch(`https://api.waqi.info/feed/@${station}/?token=7c200db3b52810d3f6a68b989445e0289d3428b8`)
     //fetch(`${city}.json`)
     .then((data) => {
       this.setState({
@@ -132,6 +133,51 @@ class App extends React.Component {
     })
   }
 
+
+  refreshStationPollution = () => {
+
+    const station = this.state.selectedStation;
+    
+    fetch(`https://api.waqi.info/feed/@${station}/?token=7c200db3b52810d3f6a68b989445e0289d3428b8`)
+    //fetch(`${city}.json`)
+    .then((data) => {
+      this.setState({
+        stationPollution: undefined,
+        loadingStation: true,
+      })
+    
+      return data.json()
+    })
+    .then((data) => {
+     if ((((data || {}).data) || {}).iaqi) {
+        this.setState({
+          stationName: data.data.city.name,
+          stationStatus: data.status,
+          stationPollution: data.data.iaqi,
+          loadingStation: false
+        });
+      } else if(((data || {}).status) || {})  {
+        this.setState({
+          stationName: "Brak danych spróbuj za chwilę.",
+          stationStatus: data.status,
+          stationPollution:  null,
+          loadingStation: false
+        });
+      }
+      return data
+    }).catch((error) => {
+      console.log('Error: ',error);
+      this.setState({
+        stationName: "Error",
+        stationPollution:  undefined,
+        stationStatus: "Błąd",
+        loadingStation: false
+      });
+    })
+  }
+
+
+
   render() {
     return (
       <div id="MainView" className="container-fluid d-flex align-items-center pl-0 pr-0">
@@ -148,6 +194,7 @@ class App extends React.Component {
         getStationPollution = {this.getStationPollution}
         getCityStation = {this.getCityStation}
         loadingTownList = {this.state.loadingTownList}
+        refreshStationPollution = {this.refreshStationPollution}
       />
       
       <ShowPollution 

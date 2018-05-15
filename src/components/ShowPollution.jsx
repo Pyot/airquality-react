@@ -111,7 +111,7 @@ class ShowPollution extends React.Component {
             transitionEnterTimeout={1000}
             transitionLeaveTimeout={1000}
             transitionAppearTimeout={1000}>
-            <div id="ShowPollution" className="row mt-4">
+            <div id="ShowPollution" className="row mt-4 mb-5">
               <div className="col-md-12 d-flex justify-content-center">
                 {this.stationName && <h2 id="CityTitle">
                   <b>{this.stationName}</b>
@@ -195,7 +195,7 @@ class ShowPollution extends React.Component {
                                   width: widthBar + '%'
                                 }}
                                   aria-valuenow={this.stationPollution[pollution]['v']}
-                                  aria-valuemax="10"><span class="ml-2">{this.stationPollution[pollution]['v']}</span>
+                                  aria-valuemax="10"><span className="ml-2">{this.stationPollution[pollution]['v']}</span>
                                 </div>
                               </div>
                             </div>
