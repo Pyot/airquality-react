@@ -12,7 +12,7 @@ class InputCity extends React.Component {
             className="form-inline"
             autoComplete="off"
             onSubmit={this.props.getStations}>
-            <div className="form-group">
+            <div className="form-group d-flex justify-content-center">
               <input
                 className="form-control mr-2"
                 type="text"

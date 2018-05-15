@@ -38,7 +38,7 @@ class SelectStation extends React.Component {
                       className="form-control"
                       value={this.props.selectedStation}
                       onChange={this.props.getStationPollution}>
-                      <option key="start">
+                      <option disabled selected value>
                         Wybierz stacje
                       </option>
                       {this
@@ -83,7 +83,7 @@ class SelectStation extends React.Component {
                     className="form-control"
                     value={this.props.selectedStation}
                     onChange={this.props.getStationPollution}>
-                    <option key="start">
+                    <option disabled selected value>
                       Wybierz stacje
                     </option>
                     {this

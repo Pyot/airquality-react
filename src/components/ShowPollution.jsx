@@ -117,7 +117,7 @@ class ShowPollution extends React.Component {
                   <b>{this.stationName}</b>
                 </h2>}
               </div>
-              <div className="col-md-12 d-flex justify-content-center">
+              <div className="col-md-12 d-flex justify-content-center pr-0 pl-0">
                 {this.stationPollution && <div className="col-md-10">
                   {Object
                     .keys(this.stationPollution)
@@ -195,7 +195,7 @@ class ShowPollution extends React.Component {
                                   width: widthBar + '%'
                                 }}
                                   aria-valuenow={this.stationPollution[pollution]['v']}
-                                  aria-valuemax="10">{this.stationPollution[pollution]['v']}
+                                  aria-valuemax="10"><span class="ml-2">{this.stationPollution[pollution]['v']}</span>
                                 </div>
                               </div>
                             </div>
