@@ -106,8 +106,8 @@ class ShowPollution extends React.Component {
           <ReactCSSTransitionGroup
             transitionName="fade"
             transitionAppear={true}
-            transitionEnter={true}
-            transitionLeave={true}
+            transitionEnter={false}
+            transitionLeave={false}
             transitionEnterTimeout={1000}
             transitionLeaveTimeout={1000}
             transitionAppearTimeout={1000}>
@@ -208,10 +208,8 @@ class ShowPollution extends React.Component {
             </div>
           </ReactCSSTransitionGroup>
         </div>
-
       )
     }
-
   }
 }
 

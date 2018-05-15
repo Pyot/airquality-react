@@ -7,7 +7,6 @@ class SelectStation extends React.Component {
 
     if (this.props.loadingTownList) {
       return (
-
         <div className="row mt-3">
           <div className="col-md-12 d-flex justify-content-center">
             <img src={"rings.svg"} alt="loading"/></div>
@@ -20,19 +19,17 @@ class SelectStation extends React.Component {
         } else {
             this.stationListStatus = this.props.stationListStatus;
         }
-     
       return (
         <div>
          <ReactCSSTransitionGroup
             transitionName="fade"
             transitionAppear={true}
-            transitionEnter={true}
-            transitionLeave={true}
+            transitionEnter={false}
+            transitionLeave={false}
             transitionEnterTimeout={1000}
             transitionLeaveTimeout={1000}
             transitionAppearTimeout={1000}>
             <div className="row mt-3">
-
               <div className="col-md-12 d-flex justify-content-center">
               {this.stationListStatus && <h2>{this.stationListStatus}</h2>}
                 <br/> {this.props.stationList && <form>
@@ -71,8 +68,8 @@ class SelectStation extends React.Component {
          <ReactCSSTransitionGroup
             transitionName="fade"
             transitionAppear={true}
-            transitionEnter={true}
-            transitionLeave={true}
+            transitionEnter={false}
+            transitionLeave={false}
             transitionEnterTimeout={1000}
             transitionLeaveTimeout={1000}
             transitionAppearTimeout={1000}>

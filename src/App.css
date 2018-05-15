@@ -14,13 +14,14 @@ select:-webkit-autofill:focus {
 
 #MainView {
   min-height: 100vh;
-  background-color: #0288d1;
-  background-image: url('/background.jpg');
+  
+  background-image: url('http://skx.ovh/img/background.jpg');
   background-repeat: no-repeat;
   background-position: right top;
   background-attachment: fixed;
   color: white;
   font-family: 'Rajdhani', sans-serif;
+  background-color: #0288d1;
 }
 
 ol,
@@ -117,29 +118,32 @@ ul {
 
 .fade-enter {
   opacity: 0;
-  max-height: 0
+  max-height: 0px;
 }
 
 .fade-enter.fade-enter-active {
   opacity: 1;
-  max-height: 100px;
+  max-height: 500px;
   transition: all 1000ms ease-out;
+  transition-delay: 1s;
 }
 
 .fade-leave {
   opacity: 1;
+  height: 500px;
   max-height: 500px;
 }
 
 .fade-leave.fade-leave-active {
   opacity: 0;
   max-height: 0px;
+  height: 0px;
   transition: all 1000ms ease-out;
 }
 
 .fade-appear {
   opacity: 0;
-  max-height: 0
+  max-height: 0px;
 }
 
 .fade-appear.fade-appear-active {
@@ -153,7 +157,7 @@ ul {
 }
 
 .slide-enter-active {
-  animation: slide-in 300ms easy-out forwards;
+  animation: slide-in 1000ms easy-out forwards;
 }
 
 .slide-leave {
@@ -161,7 +165,7 @@ ul {
 }
 
 .slide-leave-active {
-  animation: slide-out 300ms easy-out forwards;
+  animation: slide-out 1000ms easy-out forwards;
 }
 
 @keyframes slide-in {

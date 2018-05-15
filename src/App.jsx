@@ -46,7 +46,6 @@ class App extends React.Component {
     e.preventDefault();
    
     this.setState({
-      hide: true,
       stationListStatus: undefined,
       stationList: {"status": "ok", "data" : { "iaqi" : { "brak" : { "v": 'Brak danych'}}}},
       loadingTownList: true,
@@ -86,8 +85,8 @@ class App extends React.Component {
   getStationPollution = (e) => {
 
     this.setState({
-     stationListStatus: undefined,
-     stationName: undefined,
+    stationListStatus: undefined,
+    stationName: undefined,
     stationStatus : undefined,
     stationPollution: undefined,
     loadingStation: true,
@@ -95,7 +94,6 @@ class App extends React.Component {
     })
    
     const city = e.target.value;
-   
     
     fetch(`https://api.waqi.info/feed/@${city}/?token=7c200db3b52810d3f6a68b989445e0289d3428b8`)
     //fetch(`${city}.json`)
@@ -104,13 +102,10 @@ class App extends React.Component {
         stationPollution: undefined,
         loadingStation: true,
       })
-      
       return data.json()
     })
     .then((data) => {
-     
      if ((((data || {}).data) || {}).iaqi) {
-        
         this.setState({
           stationName: data.data.city.name,
           stationStatus: data.status,
@@ -124,9 +119,7 @@ class App extends React.Component {
           stationPollution:  null,
           loadingStation: false
         });
-
       }
-
       return data
     }).catch((error) => {
       console.log('Error: ',error);
@@ -137,15 +130,10 @@ class App extends React.Component {
         loadingStation: false
       });
     })
-    
-
   }
-
-  
 
   render() {
     return (
-   
       <div id="MainView" className="container-fluid d-flex align-items-center pl-0 pr-0">
       <div className="container ">
      
@@ -172,8 +160,6 @@ class App extends React.Component {
      
       </div>
       </div>
-     
-
     );
   }
 }
