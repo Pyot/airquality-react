@@ -1,4 +1,6 @@
-### You can see app here:
+# Air Quality app made in React.
+
+## You can check app here.
 http://skx.ovh/airqualityReact/
 
 
