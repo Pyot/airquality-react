@@ -1,5 +1,8 @@
 # Air Quality app made in React.
 
+The application allows you to check air pollution in your city. Data is provided from API http://www.aqicn.org.
+![airquality-react](http://skx.ovh/photo/airquality-react.png)
+
 ## You can check app here.
 http://skx.ovh/airqualityReact/
 
